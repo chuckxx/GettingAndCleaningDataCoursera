@@ -54,7 +54,7 @@ library(reshape2)
 mean_std_melt <- melt(mean_std_table,id.vars=c("SUBJECT","merged_activity"))
 mean_each <- dcast(mean_std_melt,SUBJECT + merged_activity ~ variable,mean)
 
-write.table(mean_each,file="./UCI HAR Dataset/tidy_with_means.txt")
+write.table(mean_each,file="./UCI HAR Dataset/tidy_with_means.txt",row.names=FALSE)
 mean_each
 
 
