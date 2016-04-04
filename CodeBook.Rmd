@@ -89,3 +89,15 @@ The list below shows the column numbers of the extracted columns with the measur
 * SITTING
 * STANDING
 * LAYING
+
+# Cleaning up the data - These steps are commented in run_analysis.R
+* Read subject, activity, and measurement tables in from both test and train.
+* Merge test and train subjects.
+* Merge test and train activities.
+* Merge test and train measurements.
+* Assign meaningful column names to measurements from features.txt.
+* Merge subjects, activities, measurements into one dataset.
+* Extract only the measurements of mean and standard deviation for each measurement.
+* Use reshape2 to "melt" the data so that each row is a unique id/variable combination.
+* A quick read on melting and casting can be found at http://www.statmethods.net/management/reshape.html.
+* Cast the melted data into the final tidy data result

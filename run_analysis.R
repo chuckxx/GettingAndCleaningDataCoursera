@@ -26,7 +26,7 @@ measurement_train <- read.table("./UCI HAR Dataset/train/X_train.txt")
 activity_train <- read.table("./UCI HAR Dataset/train/y_train.txt")
 
 merged_subject <- rbind(subject_test,subject_train)
-# the column name for the subject tables is just V1
+# give the data descriptive column names
 colnames(merged_subject) <- "SUBJECT"
 
 merged_measurement <- rbind(measurement_test,measurement_train)
@@ -54,7 +54,7 @@ library(reshape2)
 mean_std_melt <- melt(mean_std_table,id.vars=c("SUBJECT","merged_activity"))
 mean_each <- dcast(mean_std_melt,SUBJECT + merged_activity ~ variable,mean)
 
-write.table(mean_each,file="./UCI HAR Dataset/tidy_with_means.txt",row.names=FALSE)
+write.table(mean_each,file="./UCI HAR Dataset/tidy_with_means.txt")
 mean_each
 
 
